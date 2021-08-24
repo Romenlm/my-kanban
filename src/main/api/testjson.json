@@ -1,0 +1,11 @@
+[
+  {
+    "name": "名称",
+    "desc": "描述",
+    "level": "级别，分为1级，2级，3级",
+    "createDate": "创建时间",
+    "startDate": "开始时间",
+    "predictDate": "预计结束时间",
+    "endDate": "结束时间"
+  }
+]
