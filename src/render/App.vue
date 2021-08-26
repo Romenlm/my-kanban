@@ -40,10 +40,8 @@ export default {
       path: "",
     });
     renderer("getDataPath").then((res) => {
-      console.log("===========");
       if (!res) {
         visible.value = true;
-        console.log("0000000000000");
       } else {
         isPath.value = res;
       }

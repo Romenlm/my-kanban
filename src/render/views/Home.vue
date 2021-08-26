@@ -18,6 +18,7 @@
             <template #icon>
               <ReadOutlined v-if="item.key === 'kanban-history'" style="font-size: 20px"/>
               <SnippetsOutlined v-if="item.key === 'my-kanban'" style="font-size: 20px"/>
+              <SettingOutlined v-if="item.key === 'kanban-set'" style="font-size: 20px"/>
 <!--              <PieChartOutlined v-if="item.key === 'my-kanban'" style="font-size: 20px"/>-->
             </template>
             {{ item.title }}
@@ -48,7 +49,8 @@ import {
   // PieChartOutlined,
   SnippetsOutlined,
   ReadOutlined,
-  LeftOutlined
+  LeftOutlined,
+  SettingOutlined,
 } from "@ant-design/icons-vue";
 import { ref, reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
@@ -60,6 +62,10 @@ const list = [
   {
     key: "kanban-history",
     title: "历史记录",
+  },
+  {
+    key: "kanban-set",
+    title: "设置",
   },
   // {
   //   key: "kanban-calendar",
@@ -74,6 +80,7 @@ export default {
     // MenuUnfoldOutlined,
     LeftOutlined,
     ReadOutlined,
+    SettingOutlined,
     [Button.name]: Button,
     [Menu.name]: Menu,
     [Menu.Item.name]: Menu.Item,
@@ -92,8 +99,9 @@ export default {
         router.push("/kanban");
       } else if (value.key === "kanban-history") {
         router.push("/kanban-history");
-      } else {
-        console.log("什么也不是");
+      } else if(value.key === 'kanban-set'){
+        console.log('000000000000')
+        router.push("/kanban-set");
       }
     };
     const toggleCollapsed = () => {

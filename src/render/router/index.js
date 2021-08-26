@@ -16,6 +16,11 @@ const routes = [
         name: "KanBanHistory",
         component: () => import("../views/history/Index"),
       },
+      {
+        path: "/kanban-set",
+        name: "KanBanSet",
+        component: () => import("../views/set/Index"),
+      },
     ],
     redirect: "/kanban",
   },
